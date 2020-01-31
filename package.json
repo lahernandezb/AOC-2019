@@ -1,0 +1,27 @@
+{
+  "name": "AOC-2019",
+  "version": "1.0.0",
+  "description": "Each challange day will have its own branch. Ths solution's implmentation will utulize the functional programming paradigm as much as possible.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audifred/AOC-2019.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audifred/AOC-2019/issues"
+  },
+  "homepage": "https://github.com/audifred/AOC-2019#readme",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1"
+  }
+}
