@@ -28,9 +28,16 @@ const getFuelForFuelWeight = totalFuel => {
   if (totalFuel <= 0) {
     return totalFuel;
   } else {
-    const newValue = getTotalFuel(totalFuel);
-    console.log({ newValue });
+    const newValue = getFuelForMass(totalFuel);
 
-    return (totalFuel += getFuelForFuelWeight(newValue));
+    return newValue < 0
+      ? totalFuel
+      : (totalFuel += getFuelForFuelWeight(newValue));
   }
+};
+
+console.log(getFuelForFuelWeight(34241));
+module.exports = {
+  getFuelForMass,
+  getFuelForFuelWeight
 };
