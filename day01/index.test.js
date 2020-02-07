@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const { getFuelForMass, getFuelForFuelWeight } = require('./index');
+const { getFuelForMass, getFuel } = require('./index');
 
 describe('day01', () => {
   it('Returns 34,241 given mass', () => {
@@ -14,9 +14,9 @@ describe('day01', () => {
   });
 
   it('Returns fuel requried for fuel  weight', () => {
-    const fuelMass = 100756;
-    const totalFuel = getFuelForFuelWeight(fuelMass);
+    const fuelMass = 1969;
+    const totalFuel = getFuel(fuelMass);
 
-    expect(totalFuel).to.equal(151102);
+    expect(totalFuel).to.equal(966);
   });
 });

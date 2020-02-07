@@ -1,20 +1,21 @@
 const { pipe, reduce, add } = require('ramda');
 const convertInputToArr = require('./toArray');
+const fs = require('fs');
+const path = require('path');
+const trace = require('../lib/trace');
 
 const inputData = fs.readFileSync(path.resolve(__dirname, 'data.txt'), 'utf8');
 
 const getFuelRequirementByMass = m => Math.floor(m / 3) - 2;
 
+const getFuel1 = array => array.map(item => getFuelRequirementByMass(item));
+
 const reduceFuelArr = fuelArr =>
-  fuelArr.reduce((total, currentValue) => total + currentValue);
+  reduce((total, currentValue) => total + currentValue, 0, fuelArr);
 
-const getFuelForMass = pipe(
-  convertInputToArr,
-  getFuelRequirementByMass,
-  reduceFuelArr
-)(inputData);
+const getFuelForMass = pipe(convertInputToArr, getFuel1, reduceFuelArr);
 
-console.log(getFuelForMass());
+console.log(getFuelForMass(inputData));
 
 //-------------------------------------------------------------------
 // PART TWO
@@ -28,12 +29,17 @@ const getFuelRecursively = (totalFuel, accumulator = 0) =>
         totalFuel + accumulator
       );
 
-const getFuel = () =>
+const getFuel = input =>
   reduce(
     (acc, value) =>
       add(acc, getFuelRecursively(getFuelRequirementByMass(value))),
     0,
-    convertInputToArr(inputData)
+    convertInputToArr(input)
   );
 
-console.log(getFuel());
+console.log(getFuel(inputData));
+
+module.exports = {
+  getFuelForMass,
+  getFuel
+};
