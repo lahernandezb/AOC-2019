@@ -14,9 +14,9 @@ describe('day01', () => {
   });
 
   it('Returns fuel requried for fuel  weight', () => {
-    const fuelMass = 34241;
+    const fuelMass = 100756;
     const totalFuel = getFuelForFuelWeight(fuelMass);
 
-    expect(totalFuel).to.equal(51331);
+    expect(totalFuel).to.equal(151102);
   });
 });
