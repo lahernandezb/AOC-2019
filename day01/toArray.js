@@ -1,4 +1,4 @@
-module.exports = input =>
+exports.convertInputToArray = input =>
   input
     .toString()
     .split(/\n|\$/)
