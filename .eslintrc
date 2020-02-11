@@ -1,0 +1,12 @@
+{
+
+  "env": {
+    "node": true,
+    "es6": true,
+  "plugins": ["functional"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:functional/external-recommended",
+    "plugin:functional/recommended"
+  ]
+}
