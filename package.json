@@ -4,7 +4,7 @@
   "description": "Each challange day will have its own branch. Ths solution's implmentation will utulize the functional programming paradigm as much as possible.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./**/*.test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
     "ramda": "^0.26.1"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^2.5.0",
+    "@stryker-mutator/html-reporter": "^2.5.0",
+    "@stryker-mutator/javascript-mutator": "^2.5.0",
+    "@stryker-mutator/mocha-framework": "^2.5.0",
+    "@stryker-mutator/mocha-runner": "^2.5.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-functional": "^3.0.1",

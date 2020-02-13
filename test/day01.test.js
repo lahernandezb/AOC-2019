@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const { getFuelForMass, getFuel } = require('./index');
+const { getFuelForMass, getFuel } = require('../day01/index');
 
 describe('day01', () => {
   it('Returns 34,241 given mass', () => {
