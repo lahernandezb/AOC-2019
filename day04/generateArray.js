@@ -1,2 +1,3 @@
-exports.generateArray = (start, end) =>
-  Array.from({ length: end + 1 - start }, (x, i) => i + start);
+const { range } = require('ramda');
+
+exports.generateArray = (start, end) => range(start, end + 1);
