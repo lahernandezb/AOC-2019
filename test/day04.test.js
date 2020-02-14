@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const possiblePasswords = require('../day04/index');
+const passswordFinder = require('../day04/passwordFinder1');
 const { generateArray } = require('../day04/generateArray');
 
 describe('Password generator', () => {
@@ -12,7 +12,7 @@ describe('Password generator', () => {
   });
 
   it('returns empty array []', () => {
-    const result = possiblePasswords(array);
+    const result = passswordFinder(array);
     expect(result).to.be.an('array').that.is.empty;
   });
 });

@@ -1,15 +1,10 @@
-const { generateArray } = require('./generateArray');
-const { pipe, filter, map } = require('ramda');
+const { passwordFinder1 } = require('./passwordFinder1');
+const { passwordFinder2 } = require('./passwordFinder2');
 
-const rangeArray = generateArray(372304, 847068);
+// Retrieve acceptable password options by calling either methods with a start and end value.
 
-const toStringsArray = array => map(item => item.toString(), array);
+// getPasswordsFilter filters through a generated array of all possibilites within range.
+const getPasswordsFilter = passwordFinder1;
 
-const conditionCheck = num =>
-  num.length === 6 && /(.)\1/.test(num) && num === [...num].sort().join('');
-
-const possiblePasswords = rangeArray =>
-  pipe(toStringsArray, filter(conditionCheck))(rangeArray);
-
-module.exports = possiblePasswords;
-console.log(possiblePasswords(rangeArray).length);
+// getPasswordsLoop leverages a for loop to generarte the array of acceptable passwords.
+const getPasswordsLoop = passwordFinder2;
