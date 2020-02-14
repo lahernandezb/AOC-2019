@@ -9,7 +9,7 @@ const conditionCheck = numString =>
 exports.passwordFinder2 = (start, end) => {
   for (let i = start; i <= end; i++) {
     if (conditionCheck(i.toString())) {
-      possiblePasswords.push(i);
+      possiblePasswords.push(i.toString());
     }
   }
   return possiblePasswords;
