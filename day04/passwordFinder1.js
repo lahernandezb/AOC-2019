@@ -11,5 +11,7 @@ const conditionCheck = numString =>
   isConsecutiveDuplicate(numString) &&
   numString === [...numString].sort(sortByNumericValue).join('');
 
-exports.passwordFinder1 = (start, end) =>
+const passwordFinder1 = (start, end) =>
   pipe(generateArray, toStringsArray, filter(conditionCheck))(start, end);
+
+module.exports = passwordFinder1;

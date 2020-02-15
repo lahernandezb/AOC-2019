@@ -6,7 +6,7 @@ const conditionCheck = numString =>
   isConsecutiveDuplicate(numString) &&
   numString === [...numString].sort().join('');
 
-exports.passwordFinder2 = (start, end) => {
+const passwordFinder2 = (start, end) => {
   for (let i = start; i <= end; i++) {
     if (conditionCheck(i.toString())) {
       possiblePasswords.push(i.toString());
@@ -14,3 +14,5 @@ exports.passwordFinder2 = (start, end) => {
   }
   return possiblePasswords;
 };
+
+module.exports = passwordFinder2;
