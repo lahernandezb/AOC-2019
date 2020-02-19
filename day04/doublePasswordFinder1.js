@@ -3,8 +3,6 @@ const { toStringsArray } = require('./utils/toStringsArray');
 const { conditionChecker } = require('./utils/conditionChecker');
 const { pipe, filter } = require('ramda');
 
-const isADouble = key => counter[key] === 2;
-
 const digitCounter = numString => {
   const counter = new Set();
 
@@ -18,12 +16,14 @@ const digitCounter = numString => {
 const isGroupOfTwo = numString => {
   const counter = digitCounter(numString);
 
-  return Object.keys(counter).filter(isADouble).length !== 0;
+  return Object.keys(counter).filter(key => counter[key] === 2).length !== 0;
 };
 
-exports.doublePasswordFinder1 = (start, end) =>
+const doublePasswordFinder1 = (start, end) =>
   pipe(
     generateArray,
     toStringsArray,
     filter(conditionChecker(isGroupOfTwo))
   )(start, end);
+
+module.exports = doublePasswordFinder1;

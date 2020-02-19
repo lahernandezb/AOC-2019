@@ -1,9 +1,9 @@
-const { isConsecutiveDuplicate } = require('../utils/isConsecutiveDuplicate');
+const { isConsecutiveDuplicates } = require('../utils/isConsecutiveDuplicates');
 const possiblePasswords = [];
 
 const conditionCheck = numString =>
   numString.length === 6 &&
-  isConsecutiveDuplicate(numString) &&
+  isConsecutiveDuplicates(numString) &&
   numString === [...numString].sort().join('');
 
 const duplicatesPasswordFinder2 = (start, end) => {

@@ -14,8 +14,6 @@ const reduceFuelArr = fuelArr =>
 
 const getFuelForMass = pipe(convertInputToArray, getFuel1, reduceFuelArr);
 
-console.log(getFuelForMass(inputData));
-
 //-------------------------------------------------------------------
 // PART TWO
 //-------------------------------------------------------------------
@@ -35,8 +33,6 @@ const getFuel = input =>
     0,
     convertInputToArray(input)
   );
-
-console.log(getFuel(inputData));
 
 module.exports = {
   getFuelForMass,

@@ -4,7 +4,7 @@ const conditionCheck = numString =>
   numString.length === 6 &&
   numString === [...numString].sort(sortByNumericValue).join('');
 
-exports.doublePasswordFinder2 = (start, end) => {
+const doublePasswordFinder2 = (start, end) => {
   const result = [];
 
   for (let i = start; i <= end; i++) {
@@ -23,3 +23,5 @@ exports.doublePasswordFinder2 = (start, end) => {
   }
   return result;
 };
+
+module.exports = doublePasswordFinder2;
