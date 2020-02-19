@@ -1,4 +1,4 @@
-const { sortByNumericValue } = require('./sortByNumericValue');
+const sortByNumericValue = (a, b) => a - b;
 
 exports.isOfLengthAndOrder = numString =>
   numString.length === 6 &&
